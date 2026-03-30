@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-cream: #F2EDE4;
+  --color-brown-dark: #2C1810;
+  --color-brown-mid: #6B3A2A;
+  --color-green-dark: #1E3A1E;
+  --color-green-mid: #4A7C4A;
+  --color-amber: #C4872A;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-brown-dark);
+}
+
+/* Pixel-crisp image rendering */
+.pixel-crisp {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brown-dark);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brown-mid);
+}
+
+/* Pixel selection */
+::selection {
+  background: var(--color-brown-dark);
+  color: var(--color-cream);
+}
+
+/* UFO scan glow on active section headers */
+.ufo-lit {
+  color: #2D5A2D;
+  text-shadow: 0 0 14px rgba(74, 124, 74, 0.55);
+  transition: color 0.4s ease, text-shadow 0.4s ease;
+}
+
+/* Crash-site landing zone */
+#crash-site::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px dashed rgba(107, 58, 42, 0.2);
+  pointer-events: none;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

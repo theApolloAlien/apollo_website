@@ -1,0 +1,23 @@
+# dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+
+# Claude session files
+.claude/
+
+# env files
+.env*
+!.env.example
+
+# TypeScript build info
+*.tsbuildinfo
+next-env.d.ts

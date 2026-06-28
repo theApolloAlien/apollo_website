@@ -349,7 +349,13 @@ function CrashParticles() {
 
 // ─── UFO model selector ───────────────────────────────────────────────────────
 function UFOSelector({ current, onChange }: { current: UFOType; onChange: (t: UFOType) => void }) {
-  const [open, setOpen] = useState(true);
+  // Start collapsed so the panel never covers the hero on small screens;
+  // expand by default only on desktop, where there's room beside the content.
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (window.innerWidth >= 1024) setOpen(true);
+  }, []);
 
   // Auto-collapse when user scrolls away from top; only manual click re-opens
   useEffect(() => {

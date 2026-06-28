@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -62,9 +62,8 @@ function ReportCard({ t }: { t: Testimonial }) {
 }
 
 export function TestimonialsCarousel() {
-  const reduce = useReducedMotion();
-  // Duplicate the set for a seamless loop; a single set when motion is reduced.
-  const items = reduce ? testimonials : [...testimonials, ...testimonials];
+  // Two copies so the continuous -50% shift loops seamlessly.
+  const items = [...testimonials, ...testimonials];
 
   return (
     <section id="testimonials" className="py-10 border-t-2 border-brown-dark/20">
@@ -83,24 +82,18 @@ export function TestimonialsCarousel() {
       </div>
 
       <div
-        className={reduce ? "overflow-x-auto px-4" : "overflow-hidden"}
-        style={
-          reduce
-            ? undefined
-            : {
-                WebkitMaskImage:
-                  "linear-gradient(to right, transparent, #000 5%, #000 95%, transparent)",
-                maskImage:
-                  "linear-gradient(to right, transparent, #000 5%, #000 95%, transparent)",
-              }
-        }
+        className="overflow-hidden"
+        style={{
+          WebkitMaskImage:
+            "linear-gradient(to right, transparent, #000 5%, #000 95%, transparent)",
+          maskImage:
+            "linear-gradient(to right, transparent, #000 5%, #000 95%, transparent)",
+        }}
       >
         <motion.div
           className="flex w-max"
-          animate={reduce ? undefined : { x: ["0%", "-50%"] }}
-          transition={
-            reduce ? undefined : { duration: 45, ease: "linear", repeat: Infinity }
-          }
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ duration: 45, ease: "linear", repeat: Infinity }}
         >
           {items.map((t, i) => (
             <ReportCard key={i} t={t} />

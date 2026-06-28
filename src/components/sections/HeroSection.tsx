@@ -4,8 +4,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import { profile } from "@/lib/data";
 import { CopyEmailButton } from "@/components/ui/CopyEmailButton";
+import { useStanding } from "@/lib/useStanding";
 
 export function HeroSection() {
+  const standing = useStanding();
+
   return (
     <section
       id="hero"
@@ -73,6 +76,16 @@ export function HeroSection() {
           {profile.tagline}
         </motion.p>
 
+        {/* Academic standing — auto-updates with the calendar */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.9, duration: 0.5 }}
+          className="font-pixel text-[8px] text-green-mid tracking-[0.2em] uppercase mt-4"
+        >
+          ▌ {standing.studentLine}
+        </motion.p>
+
         {/* Contact links */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -110,7 +123,7 @@ export function HeroSection() {
           className="mt-6"
         >
           <span className="font-pixel text-[8px] bg-green-dark text-cream px-4 py-2 inline-block">
-            AVAILABILITY: {profile.availability}
+            AVAILABILITY: {standing.availability}
           </span>
         </motion.div>
 

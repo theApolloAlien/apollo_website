@@ -7,7 +7,6 @@ export const profile = {
   email: "joshua.apollo13@gmail.com",
   github: "github.com/theApolloAlien",
   linkedin: "linkedin.com/in/Joshua-Apollo",
-  availability: "25 MAY TO 25 AUGUST (EXTENDABLE)",
 };
 
 export const skills = {

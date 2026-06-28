@@ -769,7 +769,10 @@ export function LandingPadUFO() {
                 : { duration: 0.3 }
             }
           >
-            <UFOSVG size={UFO_W} type={ufoType} />
+            {/* Scaled down on phones so it's less intrusive over text */}
+            <div className="origin-center scale-[0.6] sm:scale-100">
+              <UFOSVG size={UFO_W} type={ufoType} />
+            </div>
           </motion.div>
 
           {/* Crash particles */}

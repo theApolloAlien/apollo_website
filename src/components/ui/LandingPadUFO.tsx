@@ -349,7 +349,13 @@ function CrashParticles() {
 
 // ─── UFO model selector ───────────────────────────────────────────────────────
 function UFOSelector({ current, onChange }: { current: UFOType; onChange: (t: UFOType) => void }) {
-  const [open, setOpen] = useState(true);
+  // Start collapsed so the panel never covers the hero on small screens;
+  // expand by default only on desktop, where there's room beside the content.
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (window.innerWidth >= 1024) setOpen(true);
+  }, []);
 
   // Auto-collapse when user scrolls away from top; only manual click re-opens
   useEffect(() => {
@@ -763,7 +769,10 @@ export function LandingPadUFO() {
                 : { duration: 0.3 }
             }
           >
-            <UFOSVG size={UFO_W} type={ufoType} />
+            {/* Scaled down on phones so it's less intrusive over text */}
+            <div className="origin-center scale-[0.6] sm:scale-100">
+              <UFOSVG size={UFO_W} type={ufoType} />
+            </div>
           </motion.div>
 
           {/* Crash particles */}

@@ -6,10 +6,9 @@ import type { Project } from "@/types";
 
 interface ProjectCardProps {
   project: Project;
-  clueElement?: React.ReactNode;
 }
 
-export function ProjectCard({ project, clueElement }: ProjectCardProps) {
+export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -84,10 +83,6 @@ export function ProjectCard({ project, clueElement }: ProjectCardProps) {
           </li>
         ))}
       </ul>
-
-      {clueElement && (
-        <div className="absolute bottom-2 right-2">{clueElement}</div>
-      )}
     </motion.div>
   );
 }

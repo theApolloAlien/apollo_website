@@ -1,6 +1,5 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { QuestTracker } from "@/components/ui/QuestTracker";
 import { LandingPadUFO } from "@/components/ui/LandingPadUFO";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { AboutSection } from "@/components/sections/AboutSection";
@@ -29,7 +28,6 @@ export default function HomePage() {
       </main>
       <Footer />
       <LandingPadUFO />
-      <QuestTracker />
     </>
   );
 }

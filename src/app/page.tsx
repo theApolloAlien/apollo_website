@@ -4,7 +4,6 @@ import { LandingPadUFO } from "@/components/ui/LandingPadUFO";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { TestimonialsCarousel } from "@/components/sections/TestimonialsCarousel";
 import { AboutSection } from "@/components/sections/AboutSection";
-import { SkillsSection } from "@/components/sections/SkillsSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { AchievementsSection } from "@/components/sections/AchievementsSection";
@@ -20,7 +19,6 @@ export default function HomePage() {
         <TestimonialsCarousel />
         {/* Merged subject profile + clearance records */}
         <AboutSection />
-        <SkillsSection />
         <ProjectsSection />
         <ExperienceSection />
         <AchievementsSection />

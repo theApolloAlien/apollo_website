@@ -20,13 +20,6 @@ body {
   color: var(--color-brown-dark);
 }
 
-/* Pixel-crisp image rendering */
-.pixel-crisp {
-  image-rendering: pixelated;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: crisp-edges;
-}
-
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;

@@ -17,14 +17,23 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://joshuaapollo.com"),
   title: "Joshua Apollo — Portfolio",
   description: "Computer Engineering student at NTU specialising in systems security and AI infrastructure.",
   keywords: ["portfolio", "computer engineering", "cybersecurity", "AI", "NTU"],
   authors: [{ name: "Joshua Apollo" }],
+  alternates: { canonical: "/" },
   openGraph: {
     title: "Joshua Apollo — Portfolio",
     description: "Systems security & AI infrastructure.",
+    url: "https://joshuaapollo.com",
+    siteName: "Joshua Apollo",
     type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Joshua Apollo — Portfolio",
+    description: "Systems security & AI infrastructure.",
   },
 };
 

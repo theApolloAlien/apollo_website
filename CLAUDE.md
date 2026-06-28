@@ -1,7 +1,8 @@
 # Apollo Website — working agreement
 
-This repo **auto-deploys**: every push to `main` ships to production via Vercel
-(https://apollowebsite-sigma.vercel.app). Treat `main` as always-deployable.
+This repo **auto-deploys**: every push to `main` ships to production via Vercel —
+live at https://joshuaapollo.com (Vercel alias: https://apollowebsite-sigma.vercel.app).
+Treat `main` as always-deployable.
 
 ## Workflow (applies to local Claude Code AND claude.ai/code on phone)
 

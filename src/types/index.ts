@@ -1,19 +1,3 @@
-export type AlienMood = "idle" | "curious" | "excited" | "celebrating";
-
-export interface QuestState {
-  cluesFound: number;
-  totalClues: number;
-  ufoDiscovered: boolean;
-  alienMood: AlienMood;
-  checkpoints: boolean[];
-}
-
-export interface QuestContextType extends QuestState {
-  discoverClue: (index: number) => void;
-  discoverUFO: () => void;
-  resetQuest: () => void;
-}
-
 export interface Project {
   id: string;
   title: string;

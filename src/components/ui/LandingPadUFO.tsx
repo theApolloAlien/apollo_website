@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const UFO_W = 80;
 const UFO_H = 48;
 
-const RIGHT_SECTIONS = new Set(["about", "skills", "experience", "projects", "education", "achievements", "testimonials"]);
+const RIGHT_SECTIONS = new Set(["about", "skills", "projects", "experience", "achievements"]);
 
 type CrashPhase = "none" | "approaching" | "wobbling" | "crashing" | "crashed";
 type UFOType = "saucer" | "triangle" | "orb" | "tictac" | "acorn" | "boomerang";
@@ -458,8 +458,7 @@ export function LandingPadUFO() {
   // ── Scroll / resize → update X, Y, beam direction ───────────────────────
   useEffect(() => {
     const MIDDLE_SECTIONS = [
-      "about", "skills", "experience", "projects",
-      "education", "achievements", "testimonials",
+      "about", "skills", "projects", "experience", "achievements",
     ] as const;
 
     function update() {

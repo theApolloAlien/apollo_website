@@ -140,7 +140,7 @@ export function HeroSection() {
             transition={{ duration: 2, repeat: Infinity }}
             className="font-pixel text-[7px] text-brown-mid tracking-widest"
           >
-            ▼ SCROLL TO BEGIN QUEST ▼
+            ▼ SCROLL TO EXPLORE ▼
           </motion.span>
         </motion.div>
       </div>

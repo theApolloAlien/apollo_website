@@ -3,8 +3,11 @@
 import React from "react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { profile } from "@/lib/data";
+import { useStanding } from "@/lib/useStanding";
 
 export function ContactSection() {
+  const standing = useStanding();
+
   return (
     <section
       id="contact"
@@ -82,7 +85,7 @@ export function ContactSection() {
         {/* Availability */}
         <div className="text-center">
           <p className="font-pixel text-[7px] text-brown-mid tracking-widest">
-            AVAILABILITY: {profile.availability}
+            AVAILABILITY: {standing.availability}
           </p>
         </div>
       </div>

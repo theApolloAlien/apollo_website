@@ -1,27 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { ClueMarker } from "@/components/ui/ClueMarker";
 import { education, coursework } from "@/lib/data";
 
-// Security clearance badge with hidden code
-function ClearanceBadge({ revealed }: { revealed: boolean }) {
-  return (
-    <div className="border-2 border-brown-dark p-3 inline-flex flex-col items-center gap-1 min-w-[80px]">
-      <div className="font-pixel text-[5px] text-brown-mid tracking-widest">CLEARANCE</div>
-      <div className="font-pixel text-[12px] text-brown-dark">★</div>
-      <div className={`font-pixel text-[5px] transition-all duration-500 ${revealed ? "text-amber" : "text-brown-dark/30"}`}>
-        {revealed ? "CODE: UFO-51" : "LEVEL-5"}
-      </div>
-    </div>
-  );
-}
-
 export function EducationSection() {
-  const [badgeRevealed, setBadgeRevealed] = useState(false);
-
   return (
     <section id="education" className="py-24 px-4 border-t-2 border-brown-dark/20">
       <div className="max-w-6xl mx-auto">
@@ -63,20 +47,6 @@ export function EducationSection() {
                 )}
               </motion.div>
             ))}
-
-            {/* Clearance badge clue */}
-            <ClueMarker clueIndex={5} hint="CLEARANCE CODE FOUND">
-              <div
-                className="cursor-pointer"
-                onMouseEnter={() => setBadgeRevealed(true)}
-                onMouseLeave={() => setBadgeRevealed(false)}
-              >
-                <ClearanceBadge revealed={badgeRevealed} />
-                {!badgeRevealed && (
-                  <p className="font-pixel text-[6px] text-brown-mid mt-2">hover badge to reveal</p>
-                )}
-              </div>
-            </ClueMarker>
           </div>
 
           {/* Coursework */}

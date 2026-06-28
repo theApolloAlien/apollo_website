@@ -21,15 +21,26 @@ export const projects: Project[] = [
   {
     id: "macropolo",
     title: "MacroPollo",
-    subtitle: "AI Financial Intelligence Platform",
+    subtitle: "Autonomous Research Agent",
     year: "2026",
-    badge: "CREATOR & ENGINEER",
+    badge: "TOP 8 · NTU FINTECH INNOVATORS HACKATHON 2026",
     link: "https://youtu.be/5SY_k4d-_w4?si=ufwPUOpSZMF9R7q4",
-    stack: ["FastAPI", "ChromaDB", "Qwen", "RAG", "Flutter"],
+    stack: ["ChromaDB", "RAG", "LLM"],
     bullets: [
-      "Architected an isolated, on-premise AI inference stack using FastAPI and Qwen, delivering real-time macroeconomic risk analysis with zero exposure to third-party APIs, curbing compliance and data leakage risk.",
-      "Engineered a Retrieval-Augmented Generation (RAG) pipeline integrated into an iOS app, enabling threat chain mapping against live investment portfolios, reducing manual vulnerability assessment time from hours to minutes.",
-      "Designed a zero-data-leakage architecture using ChromaDB as a local vector store, serving as a robust DLP control for proprietary financial data.",
+      "Built a custom AI agent that automates data synthesis from multiple unstructured sources, applying advanced prompt engineering and LLM orchestration to generate actionable analytical insights in real-time, analogous to building custom Gemini Gems for automated reporting.",
+      "Designed structured evaluation pipelines to benchmark output accuracy, iteratively refining prompt strategies to improve the reliability and precision of AI-generated analysis.",
+      "Delivered a polished end-to-end demo placing Top 8 at NTU's Fintech Innovators Hackathon 2026.",
+    ],
+  },
+  {
+    id: "clinic-ai",
+    title: "CLINIC AI",
+    subtitle: "Multimodal AI Triage Agent",
+    year: "2026",
+    stack: ["Python", "Computer Vision", "Audio Processing", "Generative AI"],
+    bullets: [
+      "Built an AI-driven data processing pipeline that fuses multiple real-time data streams (vision, audio, physiological signals), automating classification and generating prioritised outputs within 10 seconds.",
+      "Designed the system as a replicable proof-of-concept with documented workflows, enabling rapid iteration and continuous improvement of data collection and analysis processes.",
     ],
   },
   {
@@ -37,17 +48,38 @@ export const projects: Project[] = [
     title: "Rail Energy System",
     subtitle: "SBS Hackathon",
     year: "2026",
-    badge: "NATIONAL WINNER — 1ST PLACE · SGD 3,000",
+    badge: "NATIONAL WINNER · 1ST PLACE · SGD 3,000 · 200+ TEAMS",
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7426624723855405056/",
-    stack: ["Systems Design", "Risk Assessment", "Decentralised Architecture"],
+    stack: ["Systems Design", "Data Analysis", "Risk Assessment"],
     bullets: [
-      "Designed a decentralised energy resilience solution for Singapore's national rail network, addressing single points of failure in critical infrastructure.",
-      "Conducted end-to-end technical risk assessments, presenting engineering viability directly to C-suite judges. Outcompeted 200+ teams.",
+      "Analysed infrastructure performance data to identify critical failure points in Singapore's national rail energy network, translating complex datasets into prioritised, actionable recommendations.",
+      "Presented data-driven findings and visualisations directly to C-suite judges, articulating technical insights clearly for non-technical business stakeholders.",
+    ],
+  },
+  {
+    id: "pillpollo",
+    title: "PillPollo",
+    subtitle: "AI Clinical Intelligence Platform",
+    year: "2026",
+    badge: "TOP 50 · NTU CHUA THIAN POH PINNACLE PRIZE 2026",
+    stack: ["Product Strategy", "Go-to-Market", "Healthcare SaaS"],
+    bullets: [
+      "Designed a technology-driven product for healthcare, defining the product vision, technical architecture, and go-to-market strategy including SaaS pricing, market sizing, and a mapped procurement pathway.",
     ],
   },
 ];
 
+// Ordered so cybersecurity roles sit at the top (most prominent), then the
+// remaining roles most-recent-first.
 export const experience: Experience[] = [
+  {
+    title: "Cybersecurity Intern (Pentesting & AI Security)",
+    org: "PwC (PricewaterhouseCoopers)",
+    period: "Jul 2026 – Dec 2026",
+    bullets: [
+      "Joining the cybersecurity team with a focus on penetration testing and red teaming, AI security, and automation of cybersecurity workflows using AI-native tooling.",
+    ],
+  },
   {
     title: "Cybersecurity Intern & Cyber Tools Researcher",
     org: "Thinkture",
@@ -59,19 +91,19 @@ export const experience: Experience[] = [
     ],
   },
   {
-    title: "Firefighting Trainer, Sergeant",
-    org: "Singapore Civil Defence Force",
-    period: "Oct 2022 – Aug 2024",
-    bullets: [
-      "2-Year Mandatory Service. Awarded the 2024 Good Performance Award for sustained operational excellence.",
-    ],
-  },
-  {
     title: "Independent Creator & Partnerships Lead",
     org: "YouTube",
     period: "Aug 2024 – Mar 2025",
     bullets: [
       "Managed 30+ end-to-end production projects for international partners including Uppbeat and Dehancer.",
+    ],
+  },
+  {
+    title: "Firefighting Trainer, Sergeant",
+    org: "Singapore Civil Defence Force",
+    period: "Oct 2022 – Aug 2024",
+    bullets: [
+      "2-Year Mandatory Service. Awarded the 2024 Good Performance Award for sustained operational excellence.",
     ],
   },
 ];
@@ -130,13 +162,3 @@ export const coursework = [
   "Malware Analysis",
   "Front-End Development",
 ];
-
-export const alienHints: Record<number, string> = {
-  0: "help me find my ufo",
-  1: "i left clues behind...",
-  2: "you found something!",
-  3: "you're getting warm...",
-  4: "so close!! keep going",
-  5: "almost there!! 👀",
-  6: "find the transmission point!!",
-};

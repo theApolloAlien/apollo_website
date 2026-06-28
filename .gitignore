@@ -21,3 +21,6 @@ Thumbs.db
 # TypeScript build info
 *.tsbuildinfo
 next-env.d.ts
+
+# Local media / screen recordings (don't commit large demo videos)
+*.mov

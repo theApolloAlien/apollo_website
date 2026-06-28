@@ -3,32 +3,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { ClueMarker } from "@/components/ui/ClueMarker";
 import { SkillTag } from "@/components/ui/SkillBar";
 import { skills } from "@/lib/data";
-
-// Signal frequency blinking element
-function SignalMeter() {
-  const bars = [3, 5, 4, 7, 5, 3, 6, 4, 5, 7, 4, 3];
-  return (
-    <div className="flex items-end gap-0.5 h-8">
-      {bars.map((h, i) => (
-        <motion.span
-          key={i}
-          className="w-1.5 bg-green-mid"
-          style={{ height: h * 3 }}
-          animate={{ scaleY: [1, 0.3, 1], opacity: [1, 0.4, 1] }}
-          transition={{
-            duration: 0.8,
-            repeat: Infinity,
-            delay: i * 0.1,
-            ease: "easeInOut",
-          }}
-        />
-      ))}
-    </div>
-  );
-}
 
 const skillGroups = [
   { label: "LANGUAGES", items: skills.languages },
@@ -68,21 +44,6 @@ export function SkillsSection() {
               </div>
             </motion.div>
           ))}
-
-          {/* Signal frequency clue — md:col-span-2 anchors it to full grid width */}
-          <div className="md:col-span-2">
-            <ClueMarker clueIndex={2} hint="TRANSMISSION INTERCEPTED">
-              <div className="border-2 border-green-dark p-4 flex items-center gap-4 w-full cursor-pointer hover:bg-green-dark/5 transition-colors">
-                <div className="font-pixel text-[7px] text-green-mid tracking-widest">
-                  ▌ FREQ_SCAN
-                </div>
-                <SignalMeter />
-                <div className="font-pixel text-[6px] text-green-mid">
-                  <span className="animate-blink">●</span> SIGNAL ACTIVE
-                </div>
-              </div>
-            </ClueMarker>
-          </div>
         </div>
       </div>
     </section>

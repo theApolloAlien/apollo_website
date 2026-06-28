@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useQuest } from "@/providers/QuestProvider";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 const UFO_W = 80;
@@ -426,7 +425,7 @@ function UFOSelector({ current, onChange }: { current: UFOType; onChange: (t: UF
 
 // ─── Main component ───────────────────────────────────────────────────────────
 export function LandingPadUFO() {
-  const { ufoDiscovered, discoverUFO } = useQuest();
+  const [ufoDiscovered, setUfoDiscovered] = useState(false);
 
   const [targetX, setTargetX]             = useState(20);
   const [targetY, setTargetY]             = useState(300);
@@ -646,7 +645,7 @@ export function LandingPadUFO() {
       link.click();
       setTimeout(() => document.body.removeChild(link), 100);
 
-      discoverUFO();
+      setUfoDiscovered(true);
       setFlashActive(true);
       setTimeout(() => setFlashActive(false), 600);
     }

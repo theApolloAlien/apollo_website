@@ -3,23 +3,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { ClueMarker } from "@/components/ui/ClueMarker";
 import { CopyEmailButton } from "@/components/ui/CopyEmailButton";
 import { profile } from "@/lib/data";
-
-// Pixel alien footprint
-function AlienFootprint() {
-  return (
-    <svg width="24" height="32" viewBox="0 0 6 8" style={{ imageRendering: "pixelated" }}>
-      <rect x="2" y="0" width="2" height="2" fill="#6B3A2A" />
-      <rect x="1" y="2" width="4" height="3" fill="#6B3A2A" />
-      <rect x="0" y="1" width="2" height="2" fill="#6B3A2A" />
-      <rect x="4" y="1" width="2" height="2" fill="#6B3A2A" />
-      <rect x="1" y="5" width="2" height="2" fill="#6B3A2A" />
-      <rect x="3" y="5" width="2" height="2" fill="#6B3A2A" />
-    </svg>
-  );
-}
 
 const stats = [
   { label: "CLEARANCE", value: "LEVEL 5" },
@@ -112,19 +97,6 @@ export function AboutSection() {
                 ))}
               </div>
             </div>
-
-            {/* Hidden clue: alien footprints */}
-            <ClueMarker clueIndex={1} hint="ALIEN FOOTPRINTS FOUND" className="absolute -bottom-4 -right-4">
-              <div className="flex gap-2 opacity-50 hover:opacity-100 transition-opacity">
-                <AlienFootprint />
-                <div className="rotate-12 mt-3">
-                  <AlienFootprint />
-                </div>
-                <div className="mt-1">
-                  <AlienFootprint />
-                </div>
-              </div>
-            </ClueMarker>
           </motion.div>
         </div>
       </div>

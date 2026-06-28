@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { AlienCharacter } from "@/components/ui/AlienCharacter";
 
 const navLinks = [
   { href: "#about", label: "PROFILE" },
@@ -54,10 +53,8 @@ export function Navbar() {
           ))}
         </div>
 
-        {/* Alien + mobile toggle */}
+        {/* Mobile toggle */}
         <div className="flex items-center gap-3">
-          <AlienCharacter />
-
           {/* Hamburger — visible below lg */}
           <button
             className="lg:hidden font-pixel text-[10px] text-brown-dark"

@@ -1,30 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { ClueMarker } from "@/components/ui/ClueMarker";
 import { experience } from "@/lib/data";
 
-function RedactedStamp({ revealed }: { revealed: boolean }) {
-  return (
-    <div className="relative inline-block">
-      <span
-        className={`font-pixel text-[6px] px-2 py-1 border-2 transition-all duration-500 ${
-          revealed
-            ? "border-amber text-amber bg-transparent"
-            : "border-brown-dark text-brown-dark bg-brown-dark"
-        }`}
-      >
-        {revealed ? "▸ CLUE_DECRYPTED" : "██████████"}
-      </span>
-    </div>
-  );
-}
-
 export function ExperienceSection() {
-  const [stampRevealed, setStampRevealed] = useState(false);
-
   return (
     <section id="experience" className="py-24 px-4 border-t-2 border-brown-dark/20">
       <div className="max-w-6xl mx-auto">
@@ -73,36 +54,6 @@ export function ExperienceSection() {
                 </div>
               </motion.div>
             ))}
-
-            {/* Redacted stamp clue */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <span className="absolute -left-10 md:-left-16 top-1 w-4 h-4 border-2 border-green-mid bg-cream flex items-center justify-center">
-                <span className="w-1.5 h-1.5 bg-green-mid animate-blink" />
-              </span>
-
-              <ClueMarker clueIndex={3} hint="REDACTED FILE UNLOCKED">
-                <div
-                  className="border-2 border-dashed border-brown-mid p-4 cursor-pointer hover:border-amber transition-colors"
-                  onMouseEnter={() => setStampRevealed(true)}
-                  onMouseLeave={() => setStampRevealed(false)}
-                >
-                  <div className="font-pixel text-[7px] text-brown-mid tracking-widest mb-2">
-                    ▌ FILE_ID: #04-REDACTED
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <RedactedStamp revealed={stampRevealed} />
-                    <span className="font-pixel text-[6px] text-brown-mid">
-                      {stampRevealed ? "UFO SIGHTING LOGGED — SECTOR_04" : "hover to decrypt"}
-                    </span>
-                  </div>
-                </div>
-              </ClueMarker>
-            </motion.div>
           </div>
         </div>
       </div>

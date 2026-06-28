@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Press_Start_2P, Space_Mono } from "next/font/google";
 import "./globals.css";
-import { QuestProvider } from "@/providers/QuestProvider";
 
 const pressStart2P = Press_Start_2P({
   weight: "400",
@@ -24,7 +23,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Joshua Apollo" }],
   openGraph: {
     title: "Joshua Apollo — Portfolio",
-    description: "Systems security & AI infrastructure. Find the UFO.",
+    description: "Systems security & AI infrastructure.",
     type: "website",
   },
 };
@@ -37,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${pressStart2P.variable} ${spaceMono.variable}`}>
       <body className="bg-cream text-brown-dark antialiased">
-        <QuestProvider>{children}</QuestProvider>
+        {children}
       </body>
     </html>
   );

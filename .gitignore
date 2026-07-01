@@ -11,7 +11,7 @@ out/
 ._*
 Thumbs.db
 
-# Claude session files
+# local editor / tooling settings
 .claude/
 
 # env files

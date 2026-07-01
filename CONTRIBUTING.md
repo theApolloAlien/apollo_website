@@ -4,7 +4,7 @@ This repo **auto-deploys**: every push to `main` ships to production via Vercel 
 live at https://joshuaapollo.com (Vercel alias: https://apollowebsite-sigma.vercel.app).
 Treat `main` as always-deployable.
 
-## Workflow (applies to local Claude Code AND claude.ai/code on phone)
+## Workflow (applies whether you're editing from your laptop or your phone)
 
 1. **Sync first** — before starting any work: `git fetch origin && git pull --rebase`.
 2. **Branch per task** — never commit directly to `main`:

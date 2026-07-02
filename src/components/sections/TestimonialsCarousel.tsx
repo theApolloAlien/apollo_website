@@ -1,7 +1,4 @@
-"use client";
-
 import React from "react";
-import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -90,15 +87,12 @@ export function TestimonialsCarousel() {
             "linear-gradient(to right, transparent, #000 5%, #000 95%, transparent)",
         }}
       >
-        <motion.div
-          className="flex w-max"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 45, ease: "linear", repeat: Infinity }}
-        >
+        {/* CSS marquee — pauses on hover so reports can actually be read */}
+        <div className="flex w-max marquee">
           {items.map((t, i) => (
             <ReportCard key={i} t={t} />
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

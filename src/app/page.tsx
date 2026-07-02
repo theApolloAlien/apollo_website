@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { LandingPadUFO } from "@/components/ui/LandingPadUFO";
+import { BeamUpButton } from "@/components/ui/BeamUpButton";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { TestimonialsCarousel } from "@/components/sections/TestimonialsCarousel";
 import { AboutSection } from "@/components/sections/AboutSection";
@@ -13,7 +14,7 @@ export default function HomePage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main-content">
         <HeroSection />
         {/* Field reports carousel — top band */}
         <TestimonialsCarousel />
@@ -26,6 +27,7 @@ export default function HomePage() {
       </main>
       <Footer />
       <LandingPadUFO />
+      <BeamUpButton />
     </>
   );
 }

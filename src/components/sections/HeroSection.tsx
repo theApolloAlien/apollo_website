@@ -22,6 +22,15 @@ export function HeroSection() {
         }}
       />
 
+      {/* Radar sweep — ambient tracking display behind the dossier */}
+      <div aria-hidden className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="radar-sweep">
+          <span className="radar-blip" style={{ top: "22%", left: "64%", animationDelay: "0.4s" }} />
+          <span className="radar-blip radar-blip--amber" style={{ top: "58%", left: "28%", animationDelay: "1.6s" }} />
+          <span className="radar-blip" style={{ top: "72%", left: "70%", animationDelay: "2.8s" }} />
+        </div>
+      </div>
+
       {/* Main content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto">
         {/* Classified header */}

@@ -45,6 +45,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${pressStart2P.variable} ${spaceMono.variable}`}>
       <body className="bg-cream text-brown-dark antialiased">
+        <a href="#main-content" className="skip-link font-pixel text-[8px] tracking-widest">
+          SKIP_TO_CONTENT ▸
+        </a>
         {children}
       </body>
     </html>

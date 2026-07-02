@@ -40,6 +40,95 @@ body {
   color: var(--color-cream);
 }
 
+/* Keyboard focus — themed outline for all interactive elements */
+:focus-visible {
+  outline: 2px solid var(--color-green-dark);
+  outline-offset: 2px;
+}
+
+/* Skip-to-content link — off-screen until focused */
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 16px;
+  z-index: 100;
+  padding: 10px 14px;
+  background: var(--color-brown-dark);
+  color: var(--color-cream);
+  border: 2px solid var(--color-green-mid);
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 16px;
+}
+
+/* Field-reports marquee — CSS-driven so hover can pause it (and
+   prefers-reduced-motion stops it via the global override below) */
+.marquee {
+  animation: marquee-scroll 45s linear infinite;
+  will-change: transform;
+}
+.marquee:hover {
+  animation-play-state: paused;
+}
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Hero radar — ambient UFO-tracking display behind the dossier */
+.radar-sweep {
+  position: relative;
+  width: min(85vmin, 680px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid rgba(74, 124, 74, 0.18);
+  /* crosshair lines */
+  background:
+    linear-gradient(rgba(74, 124, 74, 0.08), rgba(74, 124, 74, 0.08)) center / 100% 1px no-repeat,
+    linear-gradient(rgba(74, 124, 74, 0.08), rgba(74, 124, 74, 0.08)) center / 1px 100% no-repeat;
+}
+.radar-sweep::before {
+  content: "";
+  position: absolute;
+  inset: 22%;
+  border-radius: 50%;
+  border: 1px solid rgba(74, 124, 74, 0.14);
+}
+.radar-sweep::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    rgba(74, 124, 74, 0.14),
+    rgba(74, 124, 74, 0.04) 24%,
+    transparent 32%
+  );
+  animation: radar-spin 9s linear infinite;
+}
+@keyframes radar-spin {
+  to { transform: rotate(360deg); }
+}
+.radar-blip {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: var(--color-green-mid);
+  opacity: 0;
+  animation: radar-blip 4.5s ease-in-out infinite;
+}
+.radar-blip--amber {
+  background: var(--color-amber);
+}
+@keyframes radar-blip {
+  0%, 100% { opacity: 0; }
+  12%      { opacity: 0.5; }
+  30%      { opacity: 0.15; }
+  45%      { opacity: 0; }
+}
+
 /* UFO scan glow on active section headers */
 .ufo-lit {
   color: #2D5A2D;

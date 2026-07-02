@@ -386,6 +386,35 @@ export function HeraldPrototype() {
           </div>
         </section>
 
+        {/* ── Photo dispatch ── */}
+        <section className="border-t-2 mt-6 pt-4 grid md:grid-cols-[1.2fr_1fr] gap-6" style={{ borderColor: CREAM }}>
+          <Reveal>
+            <EvidencePhoto
+              src="/photos/ferry.jpg"
+              alt="Apollo at the stern of a ferry under a Korean flag, scanning the sky"
+              label="DISPATCH PHOTO"
+              className="w-full aspect-[16/9] border text-cream"
+              imgClassName="object-cover grayscale contrast-125 mix-blend-luminosity opacity-90"
+            />
+            <p className="font-mono text-[10px] mt-2 leading-relaxed opacity-85">
+              PICTURED: The subject at the stern, peninsula sector. Eyes up, as usual.
+            </p>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <Kicker>PHOTO DISPATCH — INTERNATIONAL DESK</Kicker>
+            <h4 className="font-newsprint text-3xl leading-tight mt-1">Our correspondent at sea</h4>
+            <p className="text-[13px] leading-[1.75] mt-3 opacity-90">
+              Witnesses aboard the vessel report the subject spent the crossing scanning the horizon
+              and the airspace above it. When asked what he was looking for, he declined to comment.
+              No saucers were declared at customs.
+            </p>
+            <p className="text-[13px] leading-[1.75] mt-3 opacity-90">
+              Officials note this behaviour is consistent with prior sightings in forest sectors,
+              phone booths and university laboratories across the region.
+            </p>
+          </Reveal>
+        </section>
+
         {/* ── Mission logs, continued ── */}
         <section className="border-t-2 mt-6 pt-4" style={{ borderColor: CREAM }}>
           <Reveal>

@@ -232,6 +232,36 @@ export function CapsulePrototype() {
               </Reveal>
             </section>
 
+            {/* ── Exhibits C & D ── */}
+            <section className="mt-16 grid md:grid-cols-2 gap-6">
+              {[
+                {
+                  src: "/photos/forest.jpg",
+                  alt: "Subject on a forest path, looking up at the canopy",
+                  cap: "EXHIBIT C — SUBJECT MAINTAINS SKYWARD WATCH, FOREST SECTOR",
+                },
+                {
+                  src: "/photos/grass.jpg",
+                  alt: "Subject sitting on grass by the coast, looking up at the sky",
+                  cap: "EXHIBIT D — PROLONGED OBSERVATION, COASTAL PARKLANDS",
+                },
+              ].map((ex, i) => (
+                <Reveal key={ex.src} delay={i * 0.08}>
+                  <div className="relative overflow-hidden border border-black/30">
+                    <EvidencePhoto
+                      src={ex.src}
+                      alt={ex.alt}
+                      label={ex.cap}
+                      className="w-full aspect-[16/10] text-black/70"
+                      imgClassName="object-cover halftone"
+                    />
+                    <div className="dither-overlay absolute inset-0 pointer-events-none" />
+                  </div>
+                  <p className="font-mono text-[10px] tracking-[0.15em] opacity-70 mt-2">{ex.cap}</p>
+                </Reveal>
+              ))}
+            </section>
+
             {/* ── Remaining case files ── */}
             <section className="mt-16 grid md:grid-cols-3 gap-px bg-black/30 border border-black/30">
               {projects.slice(1).map((p, i) => (

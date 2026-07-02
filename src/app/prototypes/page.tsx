@@ -64,9 +64,11 @@ export default function PrototypesIndex() {
         </div>
 
         <p className="font-mono text-[11px] opacity-50 mt-12 leading-relaxed">
-          NOTE: photo slots read from <code>/public/photos/booth.jpg</code> and{" "}
-          <code>/public/photos/reach.jpg</code> — drop the two portraits there and every
-          prototype picks them up automatically. Current site remains untouched at{" "}
+          NOTE: photo slots read from <code>/public/photos/</code> — expected files:{" "}
+          <code>booth.jpg</code> (phone booth), <code>reach.jpg</code> (hand at camera),{" "}
+          <code>forest.jpg</code> (forest path), <code>ferry.jpg</code> (at sea),{" "}
+          <code>grass.jpg</code> (coastal parklands). Drop them there and every prototype
+          picks them up automatically. Current site remains untouched at{" "}
           <Link href="/" className="underline underline-offset-2 hover:opacity-80">/</Link>.
         </p>
       </div>

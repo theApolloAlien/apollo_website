@@ -357,6 +357,21 @@ export function FuryPrototype() {
         </div>
       </Chapter>
 
+      {/* ── Editorial spread ── */}
+      <Reveal className="relative h-[55vh] md:h-[72vh] overflow-hidden border-y border-white/10">
+        <EvidencePhoto
+          src="/photos/forest.jpg"
+          alt="Subject on a forest path, scanning the canopy for incoming craft"
+          label="SUBJECT PHOTOGRAPH 02"
+          className="w-full h-full text-white/60"
+          imgClassName="object-cover grayscale contrast-125 brightness-90"
+        />
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(0deg, #121210 3%, transparent 32%), linear-gradient(180deg, #121210 0%, transparent 22%)" }} />
+        <p className="absolute bottom-5 left-6 md:left-16 font-mono text-[10px] tracking-[0.3em] uppercase opacity-80">
+          Fig. 02 — subject observed scanning the canopy for incoming craft
+        </p>
+      </Reveal>
+
       <PullQuote quote={testimonials[2].quote} source={`${testimonials[2].name}, ${testimonials[2].org}`} />
 
       {/* ── Chapter III — Missions ── */}

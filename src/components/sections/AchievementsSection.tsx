@@ -9,7 +9,7 @@ export function AchievementsSection() {
   return (
     <section id="achievements" className="py-24 px-4 bg-brown-dark/5 border-t-2 border-brown-dark/20">
       <div className="max-w-6xl mx-auto">
-        <SectionHeader label="INTEL_DATA // SECTOR_06" title="COMMENDATIONS" />
+        <SectionHeader label="INTEL_DATA // SECTOR_04" title="COMMENDATIONS" />
 
         <div className="grid sm:grid-cols-2 gap-5">
           {achievements.map((a, i) => (

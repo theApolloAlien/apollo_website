@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 const UFO_W = 80;
@@ -431,6 +431,10 @@ function UFOSelector({ current, onChange }: { current: UFOType; onChange: (t: UF
 
 // ─── Main component ───────────────────────────────────────────────────────────
 export function LandingPadUFO() {
+  // framer-motion runs JS-driven transforms, so the global reduced-motion
+  // CSS override doesn't reach it — gate the infinite loops explicitly.
+  const prefersReducedMotion = useReducedMotion();
+
   const [ufoDiscovered, setUfoDiscovered] = useState(false);
 
   const [targetX, setTargetX]             = useState(20);
@@ -696,7 +700,7 @@ export function LandingPadUFO() {
           animate={
             showWobble
               ? { y: [0, -3, 2, -4, 1, -2, 0], x: [-2, 3, -3, 2, -1, 3, -2] }
-              : showCrash
+              : showCrash || prefersReducedMotion
               ? { y: 0, x: 0 }
               : { y: [0, -6, 0] }
           }

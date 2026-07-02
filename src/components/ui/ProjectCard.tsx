@@ -13,15 +13,16 @@ export function ProjectCard({ project }: ProjectCardProps) {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -4 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="relative border-2 border-brown-dark bg-cream p-6"
+      className="group relative border-2 border-brown-dark bg-cream p-6 transition-shadow duration-200 hover:shadow-[6px_6px_0_0_rgba(44,24,16,0.18)]"
     >
-      {/* Corner pixel brackets */}
-      <span className="absolute top-0 left-0 w-3 h-3 border-t-4 border-l-4 border-amber" />
-      <span className="absolute top-0 right-0 w-3 h-3 border-t-4 border-r-4 border-amber" />
-      <span className="absolute bottom-0 left-0 w-3 h-3 border-b-4 border-l-4 border-amber" />
-      <span className="absolute bottom-0 right-0 w-3 h-3 border-b-4 border-r-4 border-amber" />
+      {/* Corner pixel brackets — expand on hover */}
+      <span className="absolute top-0 left-0 w-3 h-3 border-t-4 border-l-4 border-amber transition-all duration-200 group-hover:w-5 group-hover:h-5" />
+      <span className="absolute top-0 right-0 w-3 h-3 border-t-4 border-r-4 border-amber transition-all duration-200 group-hover:w-5 group-hover:h-5" />
+      <span className="absolute bottom-0 left-0 w-3 h-3 border-b-4 border-l-4 border-amber transition-all duration-200 group-hover:w-5 group-hover:h-5" />
+      <span className="absolute bottom-0 right-0 w-3 h-3 border-b-4 border-r-4 border-amber transition-all duration-200 group-hover:w-5 group-hover:h-5" />
 
       {/* Header */}
       <div className="mb-3">
@@ -42,7 +43,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-pixel text-[7px] text-amber border border-amber px-1.5 py-0.5 hover:bg-amber hover:text-cream transition-colors"
+                className="font-pixel text-[7px] text-amber border border-amber px-2 py-1 hover:bg-amber hover:text-cream transition-colors"
               >
                 VIEW ▸
               </a>
